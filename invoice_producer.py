@@ -28,7 +28,7 @@ class InvoiceProducer:
         
     def producer_invoices(self, producer, counts):
         counter = 0
-        with open(r"C:\Users\deepe\OneDrive\Desktop\Tech_Stack\kafka-streaming\data\invoice.json") as lines:
+        with open(r".\kafka-streaming\data\invoice.json") as lines:
             for line in lines:
                 invoice = json.loads(line)
                 store_id = invoice['StoreID']
@@ -47,3 +47,4 @@ class InvoiceProducer:
 if __name__ == "__main__":
     producer = InvoiceProducer()
     producer.start_producer()        
+
